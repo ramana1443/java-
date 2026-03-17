@@ -1,0 +1,58 @@
+// Constrained code starts here
+import java.util.Scanner;
+class Product {
+    // instance variables
+    String category;
+    int price;
+    int warranty;
+    // instance methods
+    void showProductDetails() {
+        System.out.println("Category: " + category);
+        System.out.println("Price: " + price + " Rs.");
+        System.out.println("Warranty: " + warranty + " years");
+    }
+}
+// Constrained code ends here
+
+class Laptop extends Product {
+    String brand;
+    int ssdCapacity;
+    int ramCapacity;
+    String processorBrand;
+
+    void start() {
+        System.out.println("Laptop is booting");
+    }
+
+    void displayLaptopDetails() {
+        showProductDetails(); // call parent method
+        System.out.println("Brand: " + brand);
+        System.out.println("SSD: " + ssdCapacity + " GB");
+        System.out.println("RAM: " + ramCapacity + " GB");
+        System.out.println("Processor: " + processorBrand);
+    }
+}
+
+// Constrained code starts here
+public class Check {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+
+        Laptop laptop1 = new Laptop();
+        laptop1.category = read.next();
+        laptop1.price = read.nextInt();
+        laptop1.warranty = read.nextInt();
+        laptop1.brand = read.next();
+        laptop1.ssdCapacity = read.nextInt();
+        laptop1.ramCapacity = read.nextInt();
+        laptop1.processorBrand = read.next();
+
+        // Constrained code ends here
+
+        laptop1.start();
+        laptop1.displayLaptopDetails();
+        
+// Constrained code starts here
+    }
+}
+// Constrained code ends here
