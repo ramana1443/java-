@@ -1,0 +1,85 @@
+// Constrained code starts here
+import java.util.Scanner;
+// Constrained code ends here
+// Create your class here with static methods inside
+class MyMath{
+    public static void add(int a, int b){
+        System.out.println(a +b);
+    }
+    public static void add(double x,double y,double z){
+        System.out.println(x + y + z);
+    }
+    public static void add(char ch1, char ch2){
+        System.out.println((int)ch1 + (int)ch2);
+    }
+    public static void add(int[] A){
+        int sum = 0;
+        for (int val : A){
+            sum += val;
+        }
+        System.out.println(sum);
+    }
+    public static void add(String[] names){
+        StringBuilder sb = new StringBuilder();
+        for (String name : names){
+            if (name.length() > 0){
+                sb.append(name.charAt(0));
+            }
+        }
+        System.out.println(sb.toString());
+    }
+    public static void add(String s){
+        int sum = 0;
+        for (int i =0; i < s.length(); i++){
+            sum += (int) s.charAt(i);
+        }
+        System.out.println(sum);
+    }
+}
+// Constrained code starts here
+public class Main {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        // reading 2 integers
+        int a = read.nextInt();
+        int b = read.nextInt();
+
+        // reading 3 double values
+        double x = read.nextDouble();
+        double y = read.nextDouble();
+        double z = read.nextDouble();
+
+        // reading two characters
+        char ch1 = read.next().charAt(0);
+        char ch2 = read.next().charAt(0);
+
+        // reading an integer array
+        int n = read.nextInt();
+        int[] A = new int[n];
+        for (int i = 0; i < n; i++) A[i] = read.nextInt();
+
+        // reading an array of strings
+        int m = read.nextInt();
+        String names[] = new String[m];
+        for (int i = 0; i < m; i++) names[i] = read.next();
+
+        // reading a single string
+        read.nextLine(); // to consume extra enter
+        String s = read.nextLine();
+
+        // Methods calls
+        // Calling method 1
+        MyMath.add(a, b);
+        // Calling method 2
+        MyMath.add(x, y, z);
+        // Calling method 3
+        MyMath.add(ch1, ch2);
+         // Calling method 4
+        MyMath.add(A);
+        // Calling method 5
+        MyMath.add(names);
+        // Calling method 6
+        MyMath.add(s);
+    }
+}
+// Constrained code ends here
