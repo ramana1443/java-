@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class Triangle {
+    int a, b, c;
+
+    // Parameterized constructor
+    Triangle(int a, int b, int c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    // Method to calculate area using Heron's formula
+    double getArea() {
+        double s = (a + b + c) / 2.0; // semi-perimeter
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    // Method to calculate perimeter
+    int getPerimeter() {
+        return a + b + c;
+    }
+}
+
+// Constrained code starts here
+public class Main {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        Triangle t1 = new Triangle(read.nextInt(), read.nextInt(), read.nextInt());
+        System.out.printf("Area is: %.2f\n", t1.getArea());
+        System.out.printf("Perimeter is: %d", t1.getPerimeter());
+    }
+}
+// Constrained code ends here
