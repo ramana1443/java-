@@ -1,0 +1,47 @@
+// Constrained code starts here
+import java.util.Scanner;
+// Constrained code ends here
+class Person{
+    int id;
+    String name;
+    
+    Person(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
+}
+class Student extends Person{
+    int marks;
+    String status;
+    
+    Student(int id, String name, int marks){
+        super(id, name);
+        this.marks = marks;
+        if(marks >= 40){
+            this.status = "Pass";
+        }else{
+            this.status = "Fail";
+        }
+    }
+}
+class Result extends Student{
+    Result(int id, String name, int marks){
+        super(id, name, marks);
+    }
+    void displayResult(){
+        System.out.println("Result(" + id + ", " + name + ", " + marks + ", " + status + ")");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int id = sc.nextInt();
+        String name = sc.next();
+        int marks = sc.nextInt();
+
+        Result r = new Result(id, name, marks);
+        r.displayResult();
+    }
+}
