@@ -1,0 +1,66 @@
+import java.util.Scanner;
+// Parent Class
+class Mother {
+    String lifeDialogue;
+    String belief;
+    
+    // Constructor
+    Mother(String lifeDialogue, String belief) {
+        this.lifeDialogue = lifeDialogue;
+        this.belief = belief;
+    }
+
+    // Method
+    void teachLifeLesson() {
+       System.out.println("Mother Dialogue : " + lifeDialogue);
+       System.out.println("Mother Belief : " + belief); 
+    }
+}
+
+// Child Class (Single Inheritance)
+class Rocky extends Mother {
+    String attitudeDialogue;
+    String powerDialogue;
+
+    Rocky(String lifeDialogue, String belief,
+          String attitudeDialogue, String powerDialogue) {
+            super(lifeDialogue, belief);
+            this.attitudeDialogue = attitudeDialogue;
+            this.powerDialogue = powerDialogue;    
+    }
+
+    // Methods
+    void showAttitude() {
+       System.out.println("Rocky Attitude : " + attitudeDialogue); 
+    }
+
+    void showPower() {
+      System.out.println("Rocky Power : " + powerDialogue);  
+    }
+}
+
+// Constrained code starts here
+public class KGFSingleInheritance {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String motherDialogue = sc.nextLine();
+        String motherBelief = sc.nextLine();
+        String rockyAttitude = sc.nextLine();
+        String rockyPower = sc.nextLine();
+
+        Rocky rocky = new Rocky(
+            motherDialogue,
+            motherBelief,
+            rockyAttitude,
+            rockyPower
+        );
+
+        rocky.teachLifeLesson();
+        rocky.showAttitude();
+        rocky.showPower();
+    }
+}
+// Constrained code ends here
