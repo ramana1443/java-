@@ -1,0 +1,67 @@
+// Constrained code starts here
+import java.util.Scanner;
+
+class Book {
+
+// Constrained code ends here
+int id;
+String title;
+double price;
+
+Book(int id){
+    this.id = id;
+    this.title = "Not Assigned";
+    this.price = 0.0;
+}
+
+Book(int id, String title){
+    this.id = id;
+    this.title = title;
+    this.price = 0.0;
+}
+
+Book(int id, String title, double price){
+    this.id = id;
+    this.title = title;
+    this.price = price;
+}
+
+void displayBook(){
+    System.out.println("Book(" + id + ", " + title + ", " + price + ")");
+}
+// Constrained code starts here
+}
+
+// Constrained code ends here
+
+// Constrained code starts here
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n == 1) {
+            Book b = new Book(101);
+            b.displayBook();
+        }
+        else if (n == 2) {
+            Book b = new Book(102, "Java Basics");
+            b.displayBook();
+        }
+        else if (n == 3) {
+            Book b = new Book(103, "Advanced Java", 550.75);
+            b.displayBook();
+        }
+        else if (n == 0) {
+            Book b1 = new Book(101);
+            Book b2 = new Book(102, "Java Basics");
+            Book b3 = new Book(103, "Advanced Java", 550.75);
+
+            b1.displayBook();
+            b2.displayBook();
+            b3.displayBook();
+        }
+    }
+}
+// Constrained code ends here
