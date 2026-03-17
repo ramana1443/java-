@@ -1,0 +1,18 @@
+import java.util.*;
+class AnagramCheck
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next().toLowerCase();
+        String t=sc.next().toLowerCase();
+        char[] a=s.toCharArray();
+        char[] b=t.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        if(Arrays.equals(a,b))
+            System.out.println("true");
+        else
+            System.out.println("false");
+    }
+}
