@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class MostFrequentCharacter{
+    public static void main(String []args){
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    String S = sc.next();
+    int[] freq = new int[26];
+    for (int i = 0; i<N; i++){
+        char ch = S.charAt(i);
+        freq[ch-'a']++;
+    }
+    int maxFreq = 0;
+    char result = 'a';
+    for(int i = 0; i<26;i++){
+        if(freq[i]>maxFreq){
+            maxFreq = freq[i];
+            result = (char)(i + 'a');
+        }
+    }
+    System.out.println(result);
+    sc.close();
+}
+}
