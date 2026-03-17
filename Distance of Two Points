@@ -1,0 +1,41 @@
+// Constrained code starts here
+import java.util.Scanner;
+// Constrained code ends here
+// Write your Point class here
+class Point {
+    int x, y;
+
+    // Parameterized constructor
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    // Method to display point
+    void displayPoint() {
+        System.out.println("Point(" + x + ", " + y + ")");
+    }
+}
+
+// Constrained code starts here
+public class Solution {
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        Point p1 = new Point(read.nextInt(), read.nextInt());
+        Point p2 = new Point(read.nextInt(), read.nextInt());
+        p1.displayPoint();
+        p2.displayPoint();
+        double distance = getDistance(p1, p2);
+        System.out.printf("Distance is: %.2f", distance);
+    }
+
+// Constrained code ends here
+    // Write your getDistance() method here
+static double getDistance(Point p1, Point p2) {
+        int dx = p2.x - p1.x;
+        int dy = p2.y - p1.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+// Constrained code starts here
+}
+// Constrained code ends here
